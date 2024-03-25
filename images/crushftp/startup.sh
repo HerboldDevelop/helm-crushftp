@@ -44,7 +44,7 @@ if [[ ! -f ${FTP_CONFIG_BASE_DIR}/admin_user_set.txt ]] ; then
     echo "Creating default admin..."
     cd ${CRUSH_FTP_BASE_DIR} && java -jar ${CRUSH_FTP_BASE_DIR}/CrushFTP.jar -a "${CRUSH_ADMIN_USER}" "${CRUSH_ADMIN_PASSWORD}"
     touch ${FTP_CONFIG_BASE_DIR}/admin_user_set.txt
-    ln -s ${FTP_CONFIG_BASE_DIR}/users ${CRUSH_FTP_BASE_DIR}/users
+    ln -s ${FTP_CONFIG_BASE_DIR}/users/MainUsers ${CRUSH_FTP_BASE_DIR}/users/MainUsers
 
 fi
 
