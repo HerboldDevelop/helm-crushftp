@@ -8,10 +8,10 @@ admin:
   port: 8080
 tls:
   secretName: crushftp-tls
-volumes: [] # Volumes to mount to the image of other sites, etc.
-  # - name: another-volume
-  #   claimName: another-volume-claim
-  #   mountPath: /mnt/FTP/Shared/another-volume
+volumes:  # Volumes to mount to the image of other sites, etc.
+  - name: ftp-volume
+    claimName: ftp-volume-claim
+    mountPath: /mnt/FTP/Shared/ftp-volume
 configVolume:
   size: 8Gi
 loadBalancerIp: 127.0.0.1
@@ -26,7 +26,7 @@ shared:
       prefix: ftp
   ingress:
     clusterIssuer: ''
-  storageClassName: default
+  storageClassName: ssd-hostpath
 
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
@@ -34,7 +34,7 @@ shared:
 replicaCount: 1
 
 image:
-  repository: herbolddevelop/crushftp:v1.0.0
+  repository: herbolddevelop/crushftp
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
