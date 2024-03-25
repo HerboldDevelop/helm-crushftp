@@ -34,7 +34,7 @@ shared:
 replicaCount: 1
 
 image:
-  repository: greggbjensen/crushftp
+  repository: herbolddevelop/crushftp:v1.0.0
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
