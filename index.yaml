@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   crushftp:
   - apiVersion: v2
+    appVersion: 1.0.9
+    created: "2024-03-25T15:22:50.04256219Z"
+    description: Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or
+      HTTPS using CrushFTP
+    digest: e285b22b2b6998f5d211494c5465639f66eb2e91758845c7dd4376d1fed7f931
+    name: crushftp
+    type: application
+    urls:
+    - https://github.com/HerboldDevelop/helm-crushftp/releases/download/crushftp-1.0.9/crushftp-1.0.9.tgz
+    version: 1.0.9
+  - apiVersion: v2
     appVersion: 1.0.7
     created: "2024-03-25T15:12:31.206377953Z"
     description: Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or
@@ -34,4 +45,4 @@ entries:
     urls:
     - https://github.com/HerboldDevelop/helm-crushftp/releases/download/crushftp-1.0.4/crushftp-1.0.4.tgz
     version: 1.0.4
-generated: "2024-03-25T15:12:31.206389826Z"
+generated: "2024-03-25T15:22:50.042585975Z"
