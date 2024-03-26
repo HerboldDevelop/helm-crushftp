@@ -11,7 +11,7 @@ if [[ ! -f ${FTP_CONFIG_BASE_DIR}/config_initialized.txt ]] ; then
     fi
 
     # Do not symbolically link logs or it will impact performance.
-    cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports users syncsDB statsDB
+    cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports syncsDB statsDB users
     touch ${FTP_CONFIG_BASE_DIR}/config_initialized.txt
 fi
 
@@ -22,7 +22,7 @@ ln -s ${FTP_CONFIG_BASE_DIR}/SavedReports ${CRUSH_FTP_BASE_DIR}/SavedReports
 ln -s ${FTP_CONFIG_BASE_DIR}/syncsDB ${CRUSH_FTP_BASE_DIR}/syncsDB
 ln -s ${FTP_CONFIG_BASE_DIR}/statsDB ${CRUSH_FTP_BASE_DIR}/statsDB
 echo "Establishing users link..."
-ln -s ${FTP_CONFIG_BASE_DIR}/users ${CRUSH_FTP_BASE_DIR}/
+ln -s ${FTP_CONFIG_BASE_DIR}/users ${CRUSH_FTP_BASE_DIR}/users
 
 if [ -z ${CRUSH_ADMIN_USER} ]; then
     CRUSH_ADMIN_USER=devtoftp
