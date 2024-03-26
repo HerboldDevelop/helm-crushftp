@@ -50,7 +50,7 @@ fi
 
 ${CRUSH_FTP_BASE_DIR}/crushftp_init.sh start
 echo "Establishing users link..."
-chmod -R 777 users
+chmod -R 777 ${CRUSH_FTP_BASE_DIR}/users
 ln -s ${FTP_CONFIG_BASE_DIR}/users ${CRUSH_FTP_BASE_DIR}/users
 until [ -f ${CRUSH_FTP_BASE_DIR}/settings/prefs.XML ]
 do
