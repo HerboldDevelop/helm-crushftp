@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 CRUSH_FTP_BASE_DIR="/var/opt/CrushFTP10"
-FTP_CONFIG_BASE_DIR="/mnt/config"
+FTP_CONFIG_BASE_DIR="/var/opt/CrushFTP10"
 
 # Create persisted volume directories and symbolically link to correct CrushFTP path.
 if [[ ! -f ${FTP_CONFIG_BASE_DIR}/config_initialized.txt ]] ; then
@@ -11,18 +11,18 @@ if [[ ! -f ${FTP_CONFIG_BASE_DIR}/config_initialized.txt ]] ; then
     fi
 
     # Do not symbolically link logs or it will impact performance.
-    cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports syncsDB statsDB /users/MainUsers
-    touch ${FTP_CONFIG_BASE_DIR}/config_initialized.txt
+    # cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports syncsDB statsDB users
+    # touch ${FTP_CONFIG_BASE_DIR}/config_initialized.txt
 fi
 
-echo "Establishing symbolic links..."
-ln -s ${FTP_CONFIG_BASE_DIR}/backup ${CRUSH_FTP_BASE_DIR}/backup
-ln -s ${FTP_CONFIG_BASE_DIR}/settings ${CRUSH_FTP_BASE_DIR}/settings
-ln -s ${FTP_CONFIG_BASE_DIR}/SavedReports ${CRUSH_FTP_BASE_DIR}/SavedReports
-ln -s ${FTP_CONFIG_BASE_DIR}/syncsDB ${CRUSH_FTP_BASE_DIR}/syncsDB
-ln -s ${FTP_CONFIG_BASE_DIR}/statsDB ${CRUSH_FTP_BASE_DIR}/statsDB
+# echo "Establishing symbolic links..."
+# ln -s ${FTP_CONFIG_BASE_DIR}/backup ${CRUSH_FTP_BASE_DIR}/backup
+# ln -s ${FTP_CONFIG_BASE_DIR}/settings ${CRUSH_FTP_BASE_DIR}/settings
+# ln -s ${FTP_CONFIG_BASE_DIR}/SavedReports ${CRUSH_FTP_BASE_DIR}/SavedReports
+# ln -s ${FTP_CONFIG_BASE_DIR}/syncsDB ${CRUSH_FTP_BASE_DIR}/syncsDB
+# ln -s ${FTP_CONFIG_BASE_DIR}/statsDB ${CRUSH_FTP_BASE_DIR}/statsDB
 echo "Establishing users link..."
-ln -s ${FTP_CONFIG_BASE_DIR}/users/MainUsers ${CRUSH_FTP_BASE_DIR}/users/MainUsers
+ln -s ${FTP_CONFIG_BASE_DIR} ${CRUSH_FTP_BASE_DIR}
 
 if [ -z ${CRUSH_ADMIN_USER} ]; then
     CRUSH_ADMIN_USER=devtoftp

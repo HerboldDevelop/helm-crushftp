@@ -89,7 +89,7 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config-volume
-              mountPath: /mnt/config
+              mountPath: /var/opt/CrushFTP10
             {{- range .Values.volumes }}
             - name: {{ .name }}
               mountPath: {{ .mountPath }}
