@@ -16,7 +16,13 @@ if [[ ! -f ${FTP_CONFIG_BASE_DIR}/config_initialized.txt ]] ; then
 fi
 
 echo "Establishing symbolic links..."
-ln -s ${FTP_CONFIG_BASE_DIR} ${CRUSH_FTP_BASE_DIR}
+ln -s ${FTP_CONFIG_BASE_DIR}/backup ${CRUSH_FTP_BASE_DIR}/backup
+ln -s ${FTP_CONFIG_BASE_DIR}/settings ${CRUSH_FTP_BASE_DIR}/settings
+ln -s ${FTP_CONFIG_BASE_DIR}/SavedReports ${CRUSH_FTP_BASE_DIR}/SavedReports
+ln -s ${FTP_CONFIG_BASE_DIR}/syncsDB ${CRUSH_FTP_BASE_DIR}/syncsDB
+ln -s ${FTP_CONFIG_BASE_DIR}/statsDB ${CRUSH_FTP_BASE_DIR}/statsDB
+echo "Establishing users link..."
+ln -s ${FTP_CONFIG_BASE_DIR}/users ${CRUSH_FTP_BASE_DIR}/
 
 if [ -z ${CRUSH_ADMIN_USER} ]; then
     CRUSH_ADMIN_USER=devtoftp
