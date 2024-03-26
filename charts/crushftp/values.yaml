@@ -2,7 +2,7 @@
 
 # Project specific
 admin:
-  username: crushadmin
+  username: devtoftp
   password: ''
   protocol: http
   port: 8080

@@ -24,7 +24,7 @@ echo "Establishing symbolic links..."
 ln -s ${FTP_CONFIG_BASE_DIR} ${CRUSH_FTP_BASE_DIR}
 
 if [ -z ${CRUSH_ADMIN_USER} ]; then
-    CRUSH_ADMIN_USER=crushadmin
+    CRUSH_ADMIN_USER=devtoftp
 fi
 
 if [ -z ${CRUSH_ADMIN_PASSWORD} ] && [ -f ${FTP_CONFIG_BASE_DIR}/admin_user_set.txt ]; then
