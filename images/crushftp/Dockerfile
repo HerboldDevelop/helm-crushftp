@@ -27,8 +27,8 @@ RUN cd /tmp/sqljdbc_9.4.0.0_enu && cp -RT 'sqljdbc_9.4\enu' /var/opt/CrushFTP10
 RUN rm -f /tmp/sqljdbc_9.4.0.0_enu.zip
 RUN rm -rf /tmp/sqljdbc_9.4.0.0_enu
 
-ADD ./startup.sh /var/opt/startup.sh
-ENTRYPOINT [ "/bin/bash", "/var/opt/startup.sh" ]
+ADD ./startup_prod.sh /var/opt/startup_prod.sh
+ENTRYPOINT [ "/bin/bash", "/var/opt/startup_prod.sh" ]
 CMD ["-c"]
 
 HEALTHCHECK --interval=1m --timeout=3s \
