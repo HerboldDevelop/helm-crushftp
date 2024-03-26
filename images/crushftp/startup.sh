@@ -11,7 +11,7 @@ if [[ ! -f ${FTP_CONFIG_BASE_DIR}/config_initialized.txt ]] ; then
     fi
 
     # Do not symbolically link logs or it will impact performance.
-    cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports syncsDB statsDB users/MainUsers
+    cd ${FTP_CONFIG_BASE_DIR} && mkdir backup settings SavedReports syncsDB statsDB users users/MainUsers users/extra_vfs
     touch ${FTP_CONFIG_BASE_DIR}/config_initialized.txt
 fi
 
